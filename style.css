@@ -1,18 +1,28 @@
-/* .slide { */
- /* position: relative; 親要素にrelativeを指定 */
-/* } */
- 
-/* .slide img { */
- /* position: absolute; absoluteで画像を重ねる */
- /* display: none; 画像を非表示に非表示 */
-/* } */
+.header-logo {
+    background-color:#ff7f50;
+    font-size: 30px;
+    font-weight: bold;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    text-align: center;
+}
+@keyframes fadein {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
 
 .container {
   margin: 0 auto;
   padding: 40px;
-  width: 80%;
+  width: 100%;
   color: #333;
-  background: #419be0;
+  height: 100%;
+  background-color: palevioletred;
 }
 
 .slick-slide {
@@ -20,3 +30,45 @@
   color: #419be0;
   background: white;
 }
+
+.single-item {
+    width: 50%;
+    height: 10%;
+    margin: 0 auto;
+}
+
+ /*1.フェードインアニメーションの指定*/
+.scrollanime {opacity: 0;} /*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;         
+    }
+    100% {
+    opacity: 1;
+    transform: translate(400px);
+    }
+}
+ 
+/*3.左右の動きを指定*/
+.sect02{
+    overflow: hidden;
+    padding-bottom: 100px;
+    background-color: aqua;
+} 
+/*横スクロールバーを隠す*/
+.slide-right {
+    transform: translateX(1000px);
+    padding-bottom: 50px;  
+}
+
+.slide-left {
+    transform: translateX(-200px);
+    padding-bottom: 50px;
+}
+  
+  
