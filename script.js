@@ -10,12 +10,12 @@ $(function () {
 
 $(function () {
   $(window).scroll(function () {
-    $('.left-to-right').each(function () {
-      var elemPos = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > elemPos - windowHeight + 150) {
-        $(this).addClass('scrollin');
+    const wHeight = $(window).height();
+    const scrollAmount = $(window).scrollTop();
+    $('.scrollanime').each(function () {
+      const targetPosition = $(this).offset().top;
+      if (scrollAmount > targetPosition - wHeight + 100) {
+        $(this).addClass("fadeInDown");
       }
     });
   });

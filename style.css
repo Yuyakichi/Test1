@@ -19,9 +19,10 @@ to {
 .container {
   margin: 0 auto;
   padding: 40px;
-  width: 80%;
+  width: 100%;
   color: #333;
   height: 100%;
+  background-color: palevioletred;
 }
 
 .slick-slide {
@@ -36,21 +37,38 @@ to {
     margin: 0 auto;
 }
 
-/*フェードインアニメ*/
-/*左から右にフェードイン*/
-.left-to-right {
-    opacity: 0.1;
-    transform: translateX(-20px);
-    transition: all 1s;
-  }
-  .left-to-right.scrollin {
+ /*1.フェードインアニメーションの指定*/
+.scrollanime {opacity: 0;} /*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;         
+    }
+    100% {
     opacity: 1;
-    transform: translate(0);
-  }
+    transform: translate(400px);
+    }
+}
+ 
+/*3.左右の動きを指定*/
+.sect02{
+    overflow: hidden;
+    padding-bottom: 100px;
+    background-color: aqua;
+} 
+/*横スクロールバーを隠す*/
+.slide-right {
+    transform: translateX(1000px);
+    padding-bottom: 50px;  
+}
 
-  ol {
-    list-style: none;
-  }
-
+.slide-left {
+    transform: translateX(-200px);
+    padding-bottom: 50px;
+}
   
   
